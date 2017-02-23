@@ -1,7 +1,7 @@
 ﻿// homeIndex Controller
 (function () {
 
-    var HomeIndexController = function ($scope, expensesService) {
+    var HomeIndexController = function ($scope, $location, expensesService) {
         // Entities:
 
         var model = function () {
@@ -37,6 +37,7 @@
     }
 
     // controller registration.
-    app.controller("HomeIndexController", ["$scope", "expensesService", HomeIndexController]);
+    var module = angular.module("moneyLeakFree");
+    module.controller("HomeIndexController", ["$scope", "$location", "expensesService", HomeIndexController]);
     
 }());

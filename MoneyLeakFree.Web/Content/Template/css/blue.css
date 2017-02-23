@@ -1,5 +1,11 @@
 /* Blue Color */
 
+th {
+    background-color: #0072c6;
+    color: white;
+    opacity: 0.80
+}
+
 a, a:visited{
 color:#0072c6;
 text-decoration:none;
@@ -66,10 +72,13 @@ color:#c2e5ff;
 color:#c2e5ff;
 }
 
-/*.matopen {
-    color:#0072c6;
-}*/
-
 .content {
     border-radius: 10px;
+}
+
+.button {
+    min-width: 60px;
+    height: 25px;
+    text-align: center;
+    padding: 0px;
 }
