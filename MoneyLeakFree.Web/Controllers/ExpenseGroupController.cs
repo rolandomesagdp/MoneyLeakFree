@@ -1,4 +1,5 @@
-﻿using MoneyLeakFree.Web.Models;
+﻿using MoneyLeakFree.Web.Contracts;
+using MoneyLeakFree.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +9,23 @@ using System.Web.Http;
 
 namespace MoneyLeakFree.Web.Controllers
 {
-    public class ValuesController : ApiController
+    public class ExpenseGroupController : ApiController
     {
-        // GET api/values
-        [Route("api/person")]
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly IExpenseGroupWorker expenseGroupWorker;
+
+        public ExpenseGroupController(IExpenseGroupWorker expenseGroupWorker)
         {
-            return new string[] { "value1", "value2" };
+            this.expenseGroupWorker = expenseGroupWorker;
+        }
+
+        // GET api/values
+        [Route("api/expensegroups")]
+        [HttpGet]
+        public IHttpActionResult Get()
+        {
+            var expenseGroups = this.expenseGroupWorker.GetAll();
+
+            return Ok(expenseGroups);
         }
 
         // GET api/values/5
