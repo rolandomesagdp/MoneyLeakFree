@@ -1,0 +1,42 @@
+﻿<!-- Main Content Starts Here -->
+<!-- Content should be encloased inside div with the class "posts" -->
+<div class="posts">
+    <!-- Each entry should be enclosed inside div with the class "entry" -->
+    <div class="entry">
+        <div class="padd">
+            <!-- Contact Page title -->
+            <h2>Expense Group Details</h2>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="padd">
+                    <div>
+                        <div ng-show="errorThrown">
+                            <div class="errorMessage">{{errorMessage}}</div>
+                        </div>
+
+                        <div>
+
+                            <div>Id : {{expenseGroupDetails.Id}}</div>
+
+                            <div>Name : {{expenseGroupDetails.Name}}</div>
+
+                            <div>Is Active : {{expenseGroupDetails.Active}}</div>
+
+                            <div>Creation Date : {{expenseGroupDetails.CreationDate | date}}</div>
+
+                            <div>Last Updated On : {{expenseGroupDetails.LastUpdateDate | date}}</div>
+
+                        </div>
+                        <a href="#!/configuration/expensegroups">Back to List...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span> 

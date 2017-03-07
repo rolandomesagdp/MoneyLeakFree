@@ -20,6 +20,13 @@ namespace MoneyLeakFree.Web
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+            // Enables Cross Origin Requests: use with the EnableCorsAttribute to permit cross origin requests to
+            // actions or full controllers.
+            config.EnableCors();
+
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
+                new CamelCasePropertyNamesContractResolver();
+
         }
     }
 }

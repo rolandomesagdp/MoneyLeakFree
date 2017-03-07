@@ -313,6 +313,8 @@ border:0px !important;
 	padding:20px 15px;
 	color:#fff;
 	margin-bottom:10px;
+    border-radius: 5px;
+    background:#0072c6;
 }
 
 .posts h2 a, .posts h2 a:visited, .posts h2 a:hover{
@@ -423,6 +425,7 @@ border:0px !important;
 	background: #fafafa;
 	border: 1px solid #eee;
 	padding: 20px 10px;
+    border-radius: 5px;
 }
 
 

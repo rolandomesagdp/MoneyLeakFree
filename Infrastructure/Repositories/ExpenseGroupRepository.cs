@@ -36,12 +36,12 @@ namespace Infrastructure.Repositories
 
         public ExpenseGroup GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return this.context.ExpenseGroups.Where(x => x.Id == id.ToString()).FirstOrDefault();
         }
 
         public void Remove(ExpenseGroup expenseGroup)
         {
-            throw new NotImplementedException();
+            this.context.ExpenseGroups.Remove(expenseGroup);
         }
     }
 }

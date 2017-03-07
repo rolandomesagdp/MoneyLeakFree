@@ -6,6 +6,14 @@ th {
     opacity: 0.80
 }
 
+td:hover {
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: #F6F6F6;
+}
+
 a, a:visited{
 color:#0072c6;
 text-decoration:none;
@@ -51,17 +59,27 @@ background:url('../img/quote-blue.png') top left no-repeat;
 
 .entry li i { color: #0072c6; }
 
-.posts .entry h2{
-background:#0072c6;
-}
-
 .default-header hr{ border-top: 5px solid #0072c6; }
 
-.service .service-item h3,
-.features-item h4{ color:#0072c6; }
+.service-item {
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    color:black;
+}
+
+    .service-item:hover {
+        background-color: #eee;
+        cursor: pointer;
+    }
+
+.service-item h3 {
+    background-color: #0072c6; 
+    color: white;
+    border-radius: 3px;
+}
 
 .foot{
-background:#0072c6;
+    background:#0072c6;
 }
 
 .foot a, .foot a:visited{
@@ -80,5 +98,72 @@ color:#c2e5ff;
     min-width: 60px;
     height: 25px;
     text-align: center;
-    padding: 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    color: white;
+}
+
+.checkActive {
+    color: forestgreen;
+}
+
+.circleInactive {
+    color: red;
+}
+
+.errorMessage {
+    color: red;
+    background-color: antiquewhite;
+    text-align: center;
+    border-radius: 3px;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.exampleImages {
+    width: 250px;
+    height: 250px;
+}
+
+.mainImageContainer {
+    background-color: #eee;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+    .mainImageContainer h1 {
+        color: darkslategray;
+    }
+
+.mainImage {
+    width: 650px;
+    height: 350px;
+}
+
+.addButton a {
+    color:white;
+    margin-left: 15px;
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 5px;
+    margin-bottom: auto;
+
+}
+
+.textInput {
+    width: 200px;
+    height: 30px;
 }

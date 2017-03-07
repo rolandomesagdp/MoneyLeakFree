@@ -1,0 +1,49 @@
+﻿<div class="posts">
+    <!-- Each entry should be enclosed inside div with the class "entry" -->
+    <div class="entry padd-zero">
+        <div class="padd">
+            <!-- Page title -->
+            <h2>Create Expense Group</h2>
+
+            <div ng-show="errorThrown">
+                <div class="errorMessage">{{errorMessage}}</div>
+            </div>
+
+            <!-- Form Body -->
+            <div class="co-form">
+                <form name="expenseGroupForm" class="form-horizontal" ng-submit="createExpenseGroup()" novalidate>
+                    <fieldset>
+                        <div class="form-group" ng-class="{'has-error': expenseGroupForm.expenseGroupNameInput.$invalid
+                                                                        && expenseGroupForm.expenseGroupNameInput.$dirty}">
+                            <label class="control-label col-md-3 required">Name: </label>
+                            <div class="col-md-4">
+                                <input ng-model="expenseGroupToCreate.Name"
+                                       name="expenseGroupNameInput"
+                                       type="text"
+                                       class="form-control textInput"
+                                       placeholder="Name (required)"
+                                       required>
+                            </div>
+                            <span class="has-error help-block" ng-show="expenseGroupForm.expenseGroupNameInput.$invalid
+                                                                            && expenseGroupForm.expenseGroupNameInput.$dirty">
+                                Expense Group Name is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Active</label>
+                            <div class="col-md-4">
+                                <input ng-model="expenseGroupToCreate.Active" type="checkbox">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button type="submit" class="btn btn-info">Save</button> &nbsp;
+                                <button ng-click="cancelCreate()" type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,10 +14,16 @@ namespace MoneyLeakFree.Web
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Scripts/angular.min.js",
                         "~/Scripts/angular-route.min.js",
+                        "~/Scripts/App/Services/commonServices.js",
                         "~/Scripts/App/app.js",
+                        "~/Scripts/App/Services/expenseGroupService.js",
+                        "~/Scripts/App/Services/errorHandler.js",
                         "~/Scripts/App/Controllers/homeIndexController.js",
                         "~/Scripts/App/Controllers/Configuration/expenseGroupsListController.js",
-                        "~/Scripts/App/Services/expensesService.js"));
+                        "~/Scripts/App/Controllers/Configuration/expenseGroupDetailsController.js",
+                        "~/Scripts/App/Controllers/Configuration/expenseGroupEditController.js",
+                        "~/Scripts/App/Controllers/Configuration/expenseGroupCreateController.js"
+                        ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

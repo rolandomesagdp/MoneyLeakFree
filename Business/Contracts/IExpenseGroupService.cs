@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using Common.OperationResult;
+using Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +12,12 @@ namespace Business.Contracts
     {
         IEnumerable<ExpenseGroup> GetAll();
 
-        ExpenseGroup GetById(Guid id);
+        OperationResult<ExpenseGroup> GetById(Guid id);
 
-        ExpenseGroup Add(ExpenseGroup expenseGroup);
+        OperationResult<ExpenseGroup> Add(ExpenseGroup expenseGroup);
 
-        ExpenseGroup Edit(ExpenseGroup expenseGroup);
+        OperationResult<ExpenseGroup> Edit(ExpenseGroup expenseGroup);
 
-        void Delete(ExpenseGroup expenseGroup);
+        OperationResult<ExpenseGroup> Delete(Guid id);
     }
 }

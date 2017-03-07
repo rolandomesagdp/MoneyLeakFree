@@ -92,11 +92,19 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
@@ -270,12 +278,16 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Workers\IExpenseGroupWorker.cs" />
+    <Compile Include="Workers\ExpenseGroupWorker.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\areaChartExample.jpg" />
+    <Content Include="Content\img\barChartExample.png" />
+    <Content Include="Content\img\lineReportExample.jpg" />
+    <Content Include="Content\img\pieChartExample.png" />
     <Content Include="Content\Template\css\blue.css" />
     <Content Include="Content\Template\css\ddlevelsmenu-base.css" />
     <Content Include="Content\Template\css\ddlevelsmenu-topbar.css" />
@@ -296,9 +308,17 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\App\app.js" />
+    <Content Include="Scripts\App\Controllers\Configuration\expenseGroupCreateController.js" />
+    <Content Include="Scripts\App\Controllers\Configuration\expenseGroupDetailsController.js" />
+    <Content Include="Scripts\App\Controllers\Configuration\expenseGroupEditController.js" />
     <Content Include="Scripts\App\Controllers\Configuration\expenseGroupsListController.js" />
-    <Content Include="Scripts\App\Services\expensesService.js" />
-    <Content Include="Scripts\App\Views\Configuration\expenseGroupsList.html" />
+    <Content Include="Scripts\App\Services\errorHandler.js" />
+    <Content Include="Scripts\App\Services\expenseGroupService.js" />
+    <Content Include="Scripts\App\Views\Configuration\expenseDeleteDialog.html" />
+    <Content Include="Scripts\App\Views\Configuration\expenseGroupCreate.html" />
+    <Content Include="Scripts\App\Views\Configuration\expenseGroupDetails.html" />
+    <Content Include="Scripts\App\Views\Configuration\expenseGroupEdit.html" />
+    <Content Include="Scripts\App\Views\Configuration\expenseGroupList.html" />
     <Content Include="Scripts\App\Views\homeIndex.html" />
     <Content Include="Scripts\App\Controllers\homeIndexController.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -328,6 +348,7 @@
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\App\Services\commonServices.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\ddlevelsmenu.js" />

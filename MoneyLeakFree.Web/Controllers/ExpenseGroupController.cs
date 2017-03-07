@@ -1,4 +1,6 @@
-﻿using MoneyLeakFree.Web.Contracts;
+﻿using Common.OperationResult;
+using MoneyLeakFree.Web.Contracts;
+using MoneyLeakFree.Web.DTO;
 using MoneyLeakFree.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -29,33 +31,84 @@ namespace MoneyLeakFree.Web.Controllers
         }
 
         // GET api/values/5
-        [Route("api/person/{id}")]
+        [Route("api/expensegroup/{id}")]
         [HttpGet]
         public IHttpActionResult Get(Guid id)
         {
-            var person = new UserModel()
-            {
-                Id = id,
-                Name = "Rolando",
-                LastName = "Mesa"
-            };
+            IHttpActionResult actionResult;
 
-            return Ok(person);
+            var workerResult = this.expenseGroupWorker.GetById(id);
+
+            if (workerResult.OperationResultType == OperationResultType.Success)
+            {
+                actionResult = Ok(workerResult.Entity);
+            }
+            else
+            {
+                actionResult = BadRequest(workerResult.Message);
+            }
+
+            return actionResult;
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        [Route("api/expensegroup/create")]
+        public IHttpActionResult Post([FromBody]ExpenseGroupDto expenseGroup)
         {
+            IHttpActionResult actionResult;
+
+            var workerResult = this.expenseGroupWorker.Create(expenseGroup);
+
+            if (workerResult.OperationResultType == OperationResultType.Success)
+            {
+                actionResult = Ok(workerResult.Entity);
+            }
+            else
+            {
+                actionResult = BadRequest(workerResult.Message);
+            }
+
+            return actionResult;
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        [Route("api/expensegroup/edit")]
+        public IHttpActionResult Put([FromBody]ExpenseGroupDto expenseGroup)
         {
+            IHttpActionResult actionResult;
+
+            var workerResult = this.expenseGroupWorker.Edit(expenseGroup);
+
+            if (workerResult.OperationResultType == OperationResultType.Success)
+            {
+                actionResult = Ok(workerResult.Entity);
+            }
+            else
+            {
+                actionResult = BadRequest(workerResult.Message);
+            }
+
+            return actionResult;
         }
 
         // DELETE api/values/5
-        public void Delete(int id)
+        [Route("api/expensegroup/delete/{id}")]
+        public IHttpActionResult Delete(Guid id)
         {
+            IHttpActionResult actionResult;
+
+            var workerResult = this.expenseGroupWorker.Delete(id);
+
+            if (workerResult.OperationResultType == OperationResultType.Success)
+            {
+                actionResult = Ok(workerResult.Message);
+            }
+            else
+            {
+                actionResult = BadRequest(workerResult.Message);
+            }
+
+            return actionResult;
         }
     }
 }
