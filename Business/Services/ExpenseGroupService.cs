@@ -1,14 +1,11 @@
-﻿using Business.Contracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain;
-using Infrastructure.Contracts;
-using Common.OperationResult;
+using MoneyLeakFree.Business.Contracts;
+using MoneyLeakFree.Infrastructure.Contracts;
+using MoneyLeakFree.Domain.Entities;
+using MoneyLeakFree.Common.OperationResult;
 
-namespace Business.Services
+namespace MoneyLeakFree.Business.Services
 {
     public class ExpenseGroupService : IExpenseGroupService
     {
@@ -97,9 +94,9 @@ namespace Business.Services
             return operationResult;
         }
 
-        public IEnumerable<ExpenseGroup> GetAll()
+        public IEnumerable<ExpenseGroup> GetAllForuser(Guid userId)
         {
-            return this.unitOfwork.ExpenseGroupRepository.GetAll();
+            return this.unitOfwork.ExpenseGroupRepository.GetAllForUser(userId);
         }
 
         public OperationResult<ExpenseGroup> GetById(Guid id)

@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    var expenseGroupService = function ($http) {
+    var expenseGroupService = function ($http, currentUserService) {
 
         var methodsToExpose = function () {
             return {
@@ -14,7 +14,16 @@
 
         // Service Methods:
         var getExpenseGroups = function () {
-            return $http.get("/api/expensegroups")
+
+            var configuration = {
+                method: "GET",
+                url: "/api/expensegroups",
+                headers: {
+                    'Authorization': 'Bearer ' + currentUserService.getProfile().token
+                }
+            };
+
+            return $http.get("/api/expensegroups", configuration)
                         .then(function (response) {
                             var expenseGroups = response.data;
                             return expenseGroups;
@@ -62,6 +71,6 @@
 
     // Registering ExpenseService in Angular:
     var app = angular.module("commonServices");
-    app.factory("expenseGroupService", ["$http", expenseGroupService]);
+    app.factory("expenseGroupService", ["$http", "currentUserService", expenseGroupService]);
 
 }());

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace MoneyLeakFree.Domain.Entities
 {
     public class ReportConfiguration
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
+
+        public string UserId { get; set; }
 
         public string Name { get; set; }
 
@@ -17,5 +19,7 @@ namespace Domain
         public DateTime EndDate { get; set; }
 
         public ReportType ReportType { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

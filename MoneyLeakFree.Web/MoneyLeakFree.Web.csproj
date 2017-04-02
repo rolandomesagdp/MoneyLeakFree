@@ -77,6 +77,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
@@ -312,6 +316,9 @@
     <Content Include="Scripts\App\Controllers\Configuration\expenseGroupDetailsController.js" />
     <Content Include="Scripts\App\Controllers\Configuration\expenseGroupEditController.js" />
     <Content Include="Scripts\App\Controllers\Configuration\expenseGroupsListController.js" />
+    <Content Include="Scripts\App\Controllers\Login\loginController.js" />
+    <Content Include="Scripts\App\Services\accountService.js" />
+    <Content Include="Scripts\App\Services\currentUserService.js" />
     <Content Include="Scripts\App\Services\errorHandler.js" />
     <Content Include="Scripts\App\Services\expenseGroupService.js" />
     <Content Include="Scripts\App\Views\Configuration\expenseDeleteDialog.html" />
@@ -321,6 +328,9 @@
     <Content Include="Scripts\App\Views\Configuration\expenseGroupList.html" />
     <Content Include="Scripts\App\Views\homeIndex.html" />
     <Content Include="Scripts\App\Controllers\homeIndexController.js" />
+    <Content Include="Scripts\App\Views\Shared\headNavigationMenu.html" />
+    <Content Include="Scripts\App\Views\Shared\indexNotLogedIntUser.html" />
+    <Content Include="Scripts\App\Views\Shared\login.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -350,11 +360,11 @@
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\App\Services\commonServices.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\custom.js" />
-    <Content Include="Scripts\ddlevelsmenu.js" />
-    <Content Include="Scripts\easing.js" />
-    <Content Include="Scripts\flexslider.js" />
-    <Content Include="Scripts\html5shiv.js" />
+    <Content Include="Scripts\Template\custom.js" />
+    <Content Include="Scripts\Template\ddlevelsmenu.js" />
+    <Content Include="Scripts\Template\easing.js" />
+    <Content Include="Scripts\Template\flexslider.js" />
+    <Content Include="Scripts\Template\html5shiv.js" />
     <Content Include="Scripts\JavaScript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -395,17 +405,21 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business\Business.csproj">
+    <ProjectReference Include="..\Business\MoneyLeakFree.Business.csproj">
       <Project>{080b63d0-e0ca-4bb3-af67-99cb3092fd12}</Project>
-      <Name>Business</Name>
+      <Name>MoneyLeakFree.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Common\Common.csproj">
+    <ProjectReference Include="..\Common\MoneyLeakFree.Common.csproj">
       <Project>{2c846c00-5358-4898-adb3-27713057e80e}</Project>
-      <Name>Common</Name>
+      <Name>MoneyLeakFree.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain\Domain.csproj">
+    <ProjectReference Include="..\Domain\MoneyLeakFree.Domain.csproj">
       <Project>{2265500c-24ee-4c4b-a3b3-070d2207ac87}</Project>
-      <Name>Domain</Name>
+      <Name>MoneyLeakFree.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\MoneyLeakFree.Infrastructure.csproj">
+      <Project>{af28a188-96e7-4317-8395-ddfeac07ee1a}</Project>
+      <Name>MoneyLeakFree.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

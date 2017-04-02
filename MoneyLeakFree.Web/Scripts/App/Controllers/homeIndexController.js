@@ -1,11 +1,9 @@
 ﻿// homeIndex Controller
 (function () {
 
-    var HomeIndexController = function () {
+    var HomeIndexController = function ($scope) {
 
-        var vm = this;
-
-        vm.message2 = "Hello As VM Index Controller" 
+        $scope.message2 = "Hello As VM Index Controller";
         // Entities:
         
         // On Page Load Functions
@@ -14,6 +12,6 @@
 
     // controller registration.
     var module = angular.module("moneyLeakFree");
-    module.controller("HomeIndexController", [HomeIndexController]);
+    module.controller("HomeIndexController", ["$scope", HomeIndexController]);
     
 }());

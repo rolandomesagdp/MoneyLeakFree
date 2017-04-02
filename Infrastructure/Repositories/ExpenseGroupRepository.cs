@@ -1,14 +1,14 @@
-﻿using Infrastructure.Contracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain;
 using System.Linq.Expressions;
-using Infrastructure.InfrastructureContext;
+using MoneyLeakFree.Infrastructure.Contracts;
+using MoneyLeakFree.Infrastructure.InfrastructureContext;
+using MoneyLeakFree.Domain.Entities;
 
-namespace Infrastructure.Repositories
+namespace MoneyLeakFree.Infrastructure.Repositories
 {
     public class ExpenseGroupRepository : IExpenseGroupRepository
     {
@@ -32,6 +32,11 @@ namespace Infrastructure.Repositories
         public IEnumerable<ExpenseGroup> GetAll()
         {
             return this.context.ExpenseGroups;
+        }
+
+        public IEnumerable<ExpenseGroup> GetAllForUser(Guid userId)
+        {
+            return this.context.ExpenseGroups.Where(x => x.UserId == userId.ToString());
         }
 
         public ExpenseGroup GetById(Guid id)

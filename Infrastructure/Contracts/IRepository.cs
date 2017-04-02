@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Contracts
+namespace MoneyLeakFree.Infrastructure.Contracts
 {
     public interface IRepository<T>
     {

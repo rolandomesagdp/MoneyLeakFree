@@ -10,6 +10,7 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using MoneyLeakFree.Web.Models;
+using MoneyLeakFree.Domain.Entities;
 
 namespace MoneyLeakFree.Web.Providers
 {
@@ -31,7 +32,7 @@ namespace MoneyLeakFree.Web.Providers
         {
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
-            ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
+            User user = await userManager.FindAsync(context.UserName, context.Password);
 
             if (user == null)
             {

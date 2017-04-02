@@ -1,11 +1,6 @@
-﻿using Business.Contracts;
-using Business.Services;
+﻿using MoneyLeakFree.Business.Contracts;
+using MoneyLeakFree.Business.Services;
 using Ninject.Modules;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.Module
 {

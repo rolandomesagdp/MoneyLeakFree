@@ -52,17 +52,17 @@
     <Compile Include="Services\MovementService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
+    <ProjectReference Include="..\Common\MoneyLeakFree.Common.csproj">
       <Project>{2c846c00-5358-4898-adb3-27713057e80e}</Project>
-      <Name>Common</Name>
+      <Name>MoneyLeakFree.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain\Domain.csproj">
+    <ProjectReference Include="..\Domain\MoneyLeakFree.Domain.csproj">
       <Project>{2265500c-24ee-4c4b-a3b3-070d2207ac87}</Project>
-      <Name>Domain</Name>
+      <Name>MoneyLeakFree.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+    <ProjectReference Include="..\Infrastructure\MoneyLeakFree.Infrastructure.csproj">
       <Project>{af28a188-96e7-4317-8395-ddfeac07ee1a}</Project>
-      <Name>Infrastructure</Name>
+      <Name>MoneyLeakFree.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@
         
         $routeProvider.when("/home", {
             templateUrl: "Scripts/App/Views/homeIndex.html",
-            controller: "HomeIndexController as vm"
+            controller: "HomeIndexController"
         }).
         when("/configuration/expensegroups", {
             templateUrl: "Scripts/App/Views/Configuration/expenseGroupList.html",

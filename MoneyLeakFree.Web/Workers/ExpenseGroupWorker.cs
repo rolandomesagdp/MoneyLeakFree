@@ -1,12 +1,10 @@
 ﻿using MoneyLeakFree.Web.Contracts;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using MoneyLeakFree.Web.DTO;
-using Business.Contracts;
-using Common.OperationResult;
-using Domain;
+using MoneyLeakFree.Business.Contracts;
+using MoneyLeakFree.Common.OperationResult;
+using MoneyLeakFree.Domain.Entities;
 
 namespace MoneyLeakFree.Web.Workers
 {
@@ -21,11 +19,11 @@ namespace MoneyLeakFree.Web.Workers
             this.workerResultBuilder = new OperationResultBuilder<ExpenseGroupDto>();
         }
 
-        public IEnumerable<ExpenseGroupDto> GetAll()
+        public IEnumerable<ExpenseGroupDto> GetAllForUser(Guid userId)
         {
             var expenceGroupDtosToReturn = new List<ExpenseGroupDto>();
 
-            var expenseGroups = this.expenseGroupService.GetAll();
+            var expenseGroups = this.expenseGroupService.GetAllForuser(userId);
 
             foreach (var expenseGroup in expenseGroups)
             {
@@ -104,6 +102,7 @@ namespace MoneyLeakFree.Web.Workers
             var expenseGroup = new ExpenseGroup()
             {
                 Id = expenseGroupDto.Id.ToString(),
+                UserId = expenseGroupDto.UserId.ToString(),
                 Name = expenseGroupDto.Name,
                 Active = expenseGroupDto.Active,
                 CreationDate = expenseGroupDto.CreationDate,

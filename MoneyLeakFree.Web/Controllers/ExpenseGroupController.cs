@@ -1,16 +1,13 @@
-﻿using Common.OperationResult;
+﻿using MoneyLeakFree.Common.OperationResult;
 using MoneyLeakFree.Web.Contracts;
 using MoneyLeakFree.Web.DTO;
-using MoneyLeakFree.Web.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using Microsoft.AspNet.Identity;
 
 namespace MoneyLeakFree.Web.Controllers
 {
+    [Authorize]
     public class ExpenseGroupController : ApiController
     {
         private readonly IExpenseGroupWorker expenseGroupWorker;
@@ -25,7 +22,8 @@ namespace MoneyLeakFree.Web.Controllers
         [HttpGet]
         public IHttpActionResult Get()
         {
-            var expenseGroups = this.expenseGroupWorker.GetAll();
+            var userId = System.Web.HttpContext.Current.User.Identity.GetUserId();
+            var expenseGroups = this.expenseGroupWorker.GetAllForUser(Guid.Parse(userId));
 
             return Ok(expenseGroups);
         }
@@ -56,6 +54,9 @@ namespace MoneyLeakFree.Web.Controllers
         public IHttpActionResult Post([FromBody]ExpenseGroupDto expenseGroup)
         {
             IHttpActionResult actionResult;
+
+            var userId = System.Web.HttpContext.Current.User.Identity.GetUserId();
+            expenseGroup.UserId = Guid.Parse(userId);
 
             var workerResult = this.expenseGroupWorker.Create(expenseGroup);
 

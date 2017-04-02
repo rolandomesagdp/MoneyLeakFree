@@ -1,11 +1,7 @@
-﻿using Business.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using MoneyLeakFree.Business.Contracts;
 
-namespace Business.Services
+namespace MoneyLeakFree.Business.Services
 {
     public class MovementService : IMovementService
     {

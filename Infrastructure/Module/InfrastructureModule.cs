@@ -1,7 +1,6 @@
-﻿using Infrastructure.Contracts;
-using Infrastructure.InfrastructureContext;
-using Infrastructure.Repositories;
-using Infrastructure.UnitOfWork;
+﻿using MoneyLeakFree.Infrastructure.Contracts;
+using MoneyLeakFree.Infrastructure.Repositories;
+using MoneyLeakFree.Infrastructure.UnitOfWork;
 using Ninject.Modules;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Module
+namespace MoneyLeakFree.Infrastructure.Module
 {
     public class InfrastructureModule : NinjectModule
     {
@@ -17,7 +16,6 @@ namespace Infrastructure.Module
         {
             Bind<IUnitOfWork>().To<MoneyLeakFreeUnitOfWork>();
             Bind<IExpenseGroupRepository>().To<ExpenseGroupRepository>();
-            //Bind<MoneyLeakFreeDbContext>().ToSelf();
         }
     }
 }

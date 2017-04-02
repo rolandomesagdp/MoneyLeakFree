@@ -1,13 +1,13 @@
-﻿using Infrastructure.Contracts;
-using Infrastructure.InfrastructureContext;
-using Infrastructure.Repositories;
+﻿using MoneyLeakFree.Infrastructure.Contracts;
+using MoneyLeakFree.Infrastructure.InfrastructureContext;
+using MoneyLeakFree.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.UnitOfWork
+namespace MoneyLeakFree.Infrastructure.UnitOfWork
 {
     public class MoneyLeakFreeUnitOfWork : IUnitOfWork
     {

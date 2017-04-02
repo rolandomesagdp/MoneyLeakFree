@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Common.OperationResult
+﻿
+namespace MoneyLeakFree.Common.OperationResult
 {
     public class OperationResult<T> where T : class
     {

@@ -5,13 +5,13 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyLeakFree.Web", "MoneyLeakFree.Web\MoneyLeakFree.Web.csproj", "{277D7299-1549-4368-AEE8-DF58B9BBCA0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{2265500C-24EE-4C4B-A3B3-070D2207AC87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyLeakFree.Domain", "Domain\MoneyLeakFree.Domain.csproj", "{2265500C-24EE-4C4B-A3B3-070D2207AC87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{080B63D0-E0CA-4BB3-AF67-99CB3092FD12}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyLeakFree.Business", "Business\MoneyLeakFree.Business.csproj", "{080B63D0-E0CA-4BB3-AF67-99CB3092FD12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{AF28A188-96E7-4317-8395-DDFEAC07EE1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyLeakFree.Infrastructure", "Infrastructure\MoneyLeakFree.Infrastructure.csproj", "{AF28A188-96E7-4317-8395-DDFEAC07EE1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{2C846C00-5358-4898-ADB3-27713057E80E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyLeakFree.Common", "Common\MoneyLeakFree.Common.csproj", "{2C846C00-5358-4898-ADB3-27713057E80E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

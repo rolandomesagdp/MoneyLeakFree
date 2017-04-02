@@ -16,9 +16,12 @@ namespace MoneyLeakFree.Web
                         "~/Scripts/angular-route.min.js",
                         "~/Scripts/App/Services/commonServices.js",
                         "~/Scripts/App/app.js",
+                        "~/Scripts/App/Services/accountService.js",
+                        "~/Scripts/App/Services/currentUserService.js",
                         "~/Scripts/App/Services/expenseGroupService.js",
                         "~/Scripts/App/Services/errorHandler.js",
                         "~/Scripts/App/Controllers/homeIndexController.js",
+                        "~/Scripts/App/Controllers/Login/loginController.js",
                         "~/Scripts/App/Controllers/Configuration/expenseGroupsListController.js",
                         "~/Scripts/App/Controllers/Configuration/expenseGroupDetailsController.js",
                         "~/Scripts/App/Controllers/Configuration/expenseGroupEditController.js",
@@ -31,11 +34,11 @@ namespace MoneyLeakFree.Web
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/template").Include(
-                      "~/Scripts/custom.js",
-                      "~/Scripts/ddlevelsmenu.js",
-                      "~/Scripts/easing.js",
-                      "~/Scripts/flexslider.js",
-                      "~/Scripts/html5shiv.js"));
+                      "~/Scripts/Template/custom.js",
+                      "~/Scripts/Template/ddlevelsmenu.js",
+                      "~/Scripts/Template/easing.js",
+                      "~/Scripts/Template/flexslider.js",
+                      "~/Scripts/Template/html5shiv.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",

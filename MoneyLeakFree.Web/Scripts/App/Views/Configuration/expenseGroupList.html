@@ -1,8 +1,8 @@
-﻿<div class="posts">
-    <!-- Each entry should be enclosed inside div with the class "entry" -->
+﻿<!--<div class="posts">
+    
     <div class="entry padd-zero">
         <div class="padd">
-            <!-- Page title -->
+           
             <h2>Expense Groups</h2>
             
             <button ng-click="createNewExpenseGroup()" type="reset" class="btn btn-info">Add New <i class="fa fa-plus" aria-hidden="true"></i></button>
@@ -10,10 +10,10 @@
             <div class="row">
                 <div class="col-md-4 col-sm-6" ng-repeat="expenseGroup in expenseGroupsList">
                     <div class="service-item">
-                        <!-- Title -->
+                        
                         <h3>{{expenseGroup.name}}</h3>
 
-                        <!-- Body: -->
+                       
                         <div>
                             <div class="row">
                                 <div class="col-sm-4"><lable>Active:</lable></div>
@@ -26,6 +26,53 @@
                             <div class="row">
                                 <div class="col-sm-5"><lable>Updated: On</lable></div>
                                 <div class="col-sm-5"><p>{{expenseGroup.lastUpdateDate | date}}</p></div>
+                            </div>
+                            <div class="row" style="padding-bottom:10px">
+                                <button ng-click="editExpenseGroup(expenseGroup.id)" type="reset" class="btn btn-info">Edit</button> &nbsp;
+                                <button ng-click="deleteExpenseGroup(expenseGroup.id)" type="reset" class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span>-->
+
+
+
+<div class="posts">
+    <!-- Each entry should be enclosed inside div with the class "entry" -->
+    <div class="entry padd-zero">
+        <div class="padd">
+            <!-- Page title -->
+            <h2>Expense Groups</h2>
+
+            <button ng-click="createNewExpenseGroup()" type="reset" class="btn btn-info">Add New <i class="fa fa-plus" aria-hidden="true"></i></button>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-6" ng-repeat="expenseGroup in expenseGroupsList">
+                    <div class="service-item">
+                        <!-- Title -->
+                        <!--<h3>{{expenseGroup.name}}</h3>-->
+
+                        <div style="border-top-left-radius:3px; border-top-right-radius:3px; height:50px; background-color:#0072c6;">
+                            <!--<h3>{{expenseGroup.name}}</h3>-->
+                            <div style="position:relative; float:left; top:50%; left:50%; transform: translate(-50%, -50%)">
+                                <h3>{{expenseGroup.name}}</h3>
+                            </div>
+                        </div>
+
+                        <!-- Body: -->
+                        <div>
+                            <div class="row">
+                                <div class="col-sm-4"><lable>Active:</lable></div>
+                                <div class="col-sm-4">
+                                    <p>{{expenseGroup.active}}</p>
+                                </div>
                             </div>
                             <div class="row" style="padding-bottom:10px">
                                 <button ng-click="editExpenseGroup(expenseGroup.id)" type="reset" class="btn btn-info">Edit</button> &nbsp;

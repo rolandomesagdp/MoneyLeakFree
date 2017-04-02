@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace MoneyLeakFree.Domain.Entities
 {
     public class MoneyMovement
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
+
+        public string UserId { get; set; }
 
         public string Concept { get; set; }
 
@@ -19,5 +21,7 @@ namespace Domain
         public Guid MovementGroupId { get; set; }
 
         public virtual ExpenseGroup MovementGroup { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

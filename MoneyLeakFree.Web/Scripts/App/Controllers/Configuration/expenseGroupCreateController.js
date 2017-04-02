@@ -9,7 +9,7 @@
         };
 
         var onCreateExpenseGroupSuccess = function (createdExpenseGroup) {
-            var url = "/configuration/expensegroup/" + createdExpenseGroup.Id;
+            var url = "/configuration/expensegroup/" + createdExpenseGroup.id;
             $location.path(url);
         };
 
